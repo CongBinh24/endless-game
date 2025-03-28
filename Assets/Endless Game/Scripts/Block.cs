@@ -43,8 +43,24 @@ public class Block : MonoBehaviour, ICompChk
     }
     public bool IsComponentsNull()
     {
-        return m_rb == null || m_sp == null;
-  
+        bool checking = m_rb == null || m_sp == null;
+        if (checking)
+            Debug.LogError("Some component is null. Please check!!!.");
+
+        return checking;
+
+    }
+
+    public void ChangeSprite(ref int idx)
+    {
+        if (sprites == null || sprites.Length <= 0 || IsComponentsNull()) return;
+
+        m_sp.sprite = sprites[idx];
+
+        idx++;
+
+        if (idx >= sprites.Length)
+            idx = 0;
     }
 
     private void BlockMoving()

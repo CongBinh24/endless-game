@@ -53,4 +53,20 @@ public class DataStruct : MonoBehaviour
         Playing,
         Gameover
     }
+
+    [System.Serializable]
+    public class LevelItem
+    {
+        public int scoreRequire;
+        public Sprite unlockThumb;
+        public Sprite lockThumb;
+        public Sprite levelBG;
+        public Sprite chacPreviewImg;
+        public Player playerPb;
+        public Block blockPb;
+        public GameObject mapPb;
+        public float spawnTime;
+        public float baseSpeed;
+        public float maxSpeed;
+    }
 }

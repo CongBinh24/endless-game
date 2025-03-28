@@ -53,7 +53,11 @@ public class Player : MonoBehaviour, ICompChk
 
     public bool IsComponentsNull()
     {
-        return m_rb == null || m_anim == null;
+        bool checking = m_rb == null || m_anim == null;
+        if (checking)
+            Debug.LogError("Some component is null. Please check!!!.");
+
+        return checking;
     }
     
     private void IsOnBlock()
